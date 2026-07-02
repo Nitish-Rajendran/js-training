@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Task Tracker</h1>
+  </header>
+
+  <main>
+    <section>
+      <form id="task-form">
+        <div class="form-group">
+          <label for="task-name">Task Name:</label>
+          <input type="text" id="task-name" required>
+        </div>
+        <div class="form-group">
+          <label for="task-priority">Priority:</label>
+          <select id="task-priority" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="task-due-date">Due Date:</label>
+          <input type="date" id="task-due-date" required>
+        </div>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="controls-group">
+      <div class="filters">
+        <button id="filter-all">All</button>
+        <button id="filter-pending">Pending</button>
+        <button id="filter-done">Done</button>
+      </div>
+
+      <div class="sort">
+        <label for="sort-tasks">Sort By:</label>
+        <select id="sort-tasks">
+          <option value="priority">Priority</option>
+          <option value="dueDate">Due Date</option>
+        </select>
+      </div>
+
+      <p id="task-counter">Showing 0 of 0 tasks</p>
+    </section>
+
+    <section>
+      <ul id="task-list"></ul>
+      <button id="clear-all">Clear All</button>
+    </section>
+
+    <section>
+      <h2>Task Table</h2>
+      <table id="task-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="task-table-body"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Priority Summary</h2>
+      <table id="priority-summary-table">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody id="priority-summary-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <script src="tasks.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
